@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font: 24px 'Roboto', sans-serif;
+    background: url("images/someTree.jpg") no-repeat;
+    background-size: cover;
+  }
+
+  header {
+    opacity: 0.9;
+    width: 100%;
+    height: 85px;
+    z-index: 1000;
+    background-color: #96C339;
+  }
+
+  header h1#logo {
+    float: left;
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    color: #FFF;
+    font-weight: 400;
+    margin-left: 35px;
+  }
+
+  header nav {
+    display: inline-block;
+    float: right;
+  }
+
+  header nav a {
+    line-height: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  a {
+    font-family: 'Droid Sans', serif;
+    color: white;
+    text-decoration: none;
+    line-height: 40px;
+  }
+
+  .active {
+    font-family: 'Droid Sans', serif;
+    font-size: 22px;
+    color: #000;
+    text-decoration: none;
+    line-height: 40px;
+  }
+
+  #about {
+    background-color: #fff;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.6;
+  }
+
+  #skills {
+    background-color: #fff;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.6;
+  }
+
+  #contact {
+    background-color: #fff;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.6;
+  }
+
+  @media all and (max-width: 770px) {
+    header h1#logo {
+      font-size: 30px;
+      display: block;
+      float: none;
+      margin: 0 auto;
+      height: 100px;
+      line-height: 55px;
+      text-align: center;
+    }
+
+    header nav {
+      display: block;
+      float: none;
+      height: 50px;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: -65px;
+    }
+
+    header nav a {
+      font-size: 15px;
+      line-height: 50px;
+      margin: 0 5px;
+    }
+  }
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Data Profiling App</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+
+</head>
+<body style="margin: 0;">
+
+    <header class="nav" style=" width: 100%;  background-color: #96C339; display: inline-block;">
+        <h1 id="logo" style="font-family: Roboto, sans-serif;  font-size: 40px;   color: #FFF;   font-weight: 400; margin-left: 35px;">Data Visualization</h1>
+    </header>
+
+    <div class="container">
+        <br>
+        <form action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">  
+            <input type="file" name="file" />  
+            <input type = "submit" value="Upload">  
+        </form> 
+        <br>
+        <div class="row">
+            <div class="col-xs-3">
+                <label> Choose the plot type....</label>
+                <select class="form-control" id ='first_cat'>
+                    <option value="Sensor">Select one Activity</option>
+                    <!-- <option value="Details"><a href="details.html" target="_blank">Details</a></option>                     -->
+                    <option value="Sensor">Sensor-Activity</option>
+                    <option value="Concurrent">Concurrent</option>
+                    <!-- <option value="Concurrent_R2">Concurrent R2</option> -->
+                    <option value="Interleaved">Interleaved</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <div class="chart" id="bargraph">
+                    <script>
+                        var graphs = {{plot | safe}};
+                        Plotly.plot('bargraph',graphs,{});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            <ul>
+               {% for message in messages %}
+               <h1 style="margin-top: 200px;"> {{ message }} </h1>
+               {% endfor %}
+            </ul>
+         {% endif %}
+      {% endwith %}
+
+    <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+</body>
+</html>
